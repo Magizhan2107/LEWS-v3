@@ -1,0 +1,87 @@
+# ==========================================
+# GCP / Earth Engine Credentials (CRITICAL SECURITY)
+# ==========================================
+*.json
+.env
+.env.*
+!.env.example
+Keys/
+keys/
+secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ==========================================
+# Python Environment & Cache
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+*.pyc
+
+# ==========================================
+# Large Datasets & Heavy GeoTIFF Rasters
+# ==========================================
+landslide_system/data/raw/*
+!landslide_system/data/raw/.gitkeep
+landslide_system/data/processed/*.tif
+landslide_system/data/processed/*.tiff
+landslide_system/data/processed/*.zip
+
+# ==========================================
+# Trained Model Binaries
+# ==========================================
+landslide_system/models/*.joblib
+landslide_system/models/*.pkl
+landslide_system/models/*.h5
+!landslide_system/models/.gitkeep
+
+# ==========================================
+# Frontend / Node.js
+# ==========================================
+node_modules/
+dist/
+build/
+.next/
+.nuxt/
+*.local
+
+# ==========================================
+# Microsoft Office Temporary Files
+# ==========================================
+~$*.docx
+~$*.xlsx
+~$*.pptx
+~$*.doc
+~$*.xls
+~$*.ppt
+
+# ==========================================
+# IDE & Operating System Artifacts
+# ==========================================
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==========================================
+# Logs & Output Files
+# ==========================================
+*.log
+out.txt
+*.txt
+
+# ==========================================
+# Reports & Results (generated outputs)
+# ==========================================
+landslide_system/reports/
+landslide_system/results/
