@@ -44,8 +44,8 @@ logger = logging.getLogger(__name__)
 # Configuration Constants
 # ---------------------------------------------------------------------------
 
-_HTTP_TIMEOUT        = 3.0          # seconds — hard limit per external request
-_PARALLEL_TIMEOUT    = 3.0          # seconds — hard wall-clock for all concurrent calls
+_HTTP_TIMEOUT        = 1.5          # seconds — hard limit per external request
+_PARALLEL_TIMEOUT    = 1.5          # seconds — hard wall-clock for all concurrent calls
 _SOILGRIDS_BASE      = "https://rest.isric.org/soilgrids/v2.0/properties/query"
 _OVERPASS_URL        = "https://overpass-api.de/api/interpreter"
 _OVERPASS_BBOX_DEG   = 0.03         # ± degrees bounding box for proximity search

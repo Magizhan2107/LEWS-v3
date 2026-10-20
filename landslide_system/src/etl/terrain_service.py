@@ -23,7 +23,7 @@ def get_terrain_features(lat: float, lon: float) -> dict:
         lon_str = ",".join(str(p["longitude"]) for p in locations)
         response = requests.get(
             f"https://api.open-meteo.com/v1/elevation?latitude={lat_str}&longitude={lon_str}",
-            timeout=5
+            timeout=2
         )
         response.raise_for_status()
         elevations = response.json().get("elevation", [200.0] * 5)

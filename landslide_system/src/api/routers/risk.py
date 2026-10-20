@@ -273,7 +273,14 @@ def evaluate_risk(
     # 1. & 2. Extract AWS Telemetry info
     aws_info = meta.get("feature_metadata", {}).get("aws_telemetry", {})
     if aws_info:
-        res_dict["telemetry_source"] = "HYBRID_CHIRPS_AWS" if aws_info.get("status") == "LIVE_AWS_INTERPOLATED" else "SATELLITE_CHIRPS"
+        status_val = aws_info.get("status")
+        if status_val == "LIVE_API_OPENMETEO":
+            res_dict["telemetry_source"] = "OPEN_METEO_API"
+        elif status_val == "LIVE_AWS_INTERPOLATED":
+            res_dict["telemetry_source"] = "HYBRID_CHIRPS_AWS"
+        else:
+            res_dict["telemetry_source"] = "SATELLITE_CHIRPS"
+            
         res_dict["nearest_station"] = aws_info.get("nearest_station_id", "N/A")
         res_dict["station_distance_km"] = aws_info.get("nearest_distance_km", 0.0)
         res_dict["telemetry_status"] = aws_info.get("status", "FALLBACK_CHIRPS")
